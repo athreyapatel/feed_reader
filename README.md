@@ -3,7 +3,7 @@
 - This is my 4th Udacity ND Project
 
 ## Preview:
-- Link : 
+- Link : https://athreyapatel.github.io/feed_reader/
 
 ## Getting Started
 
