@@ -9,7 +9,7 @@
 
 - To download or clone this repository. You can use these commands in your terminal.
 ``` bash
-     https://github.com/athreyapatel/fend_arcade_game.git
+     https://github.com/athreyapatel/feed_reader.git
 ```
 - Run the index.html file using your favorite browser(Chrome, FF, Safari)
 - After the page has loaded, you case see test results at the bottom of the page.
