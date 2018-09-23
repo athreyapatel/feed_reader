@@ -95,12 +95,21 @@ $(function() {
     });
     /* A new test suite named "New Feed Selection" */
     describe("New Feed Selection",function () {
+      beforeEach(function (done) {
+        loadFeed(0,function () {
+          oldFeed=$('.feed').html(); //older feed
+          loadFeed(1,function () {
+            newFeed=$('.feed').html(); //newer feed
+            done();
+          });
+        });
+      });
       /* A test that ensures when a new feed is loaded
        * by the loadFeed function that the content actually changes.
        * Remember, loadFeed() is asynchronous.
        */
        it("new feed is loaded",function () {
-
+         expect(newFeed).not.toBe(oldFeed);
        });
     });
 }());
