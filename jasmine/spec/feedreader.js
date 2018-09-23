@@ -60,7 +60,7 @@ $(function() {
        * hiding/showing of the menu element.
        */
        it("menu element is hidden bny default",function () {
-
+         expect($("body").hasClass("menu-hidden")).toEqual(true);
        });
        /* A test that ensures the menu changes
         * visibility when the menu icon is clicked. This test
@@ -68,12 +68,21 @@ $(function() {
         * clicked and does it hide when clicked again.
         */
         it("menu on click changes visibility(toggles)",function () {
-
+          $(".menu-icon-link").trigger("click");
+          expect($("body").hasClass("menu-hidden")).toEqual(false);
+          $(".menu-icon-link").trigger("click");
+          expect($("body").hasClass("menu-hidden")).toEqual(true);
         });
     });
 
     /* A new test suite named "Initial Entries" */
     describe("Initial Entries",function () {
+      beforeEach(function (done) {
+        $(".feed").empty();
+        loadFeed(0,function () {
+          done();
+        });
+      });
         /* A test that ensures when the loadFeed
          * function is called and completes its work, there is at least
          * a single .entry element within the .feed container.
@@ -81,7 +90,7 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
          it("there is atleast one entry",function () {
-
+           expect($('.feed .entry').length).toBeGreaterThan(0);
          });
     });
     /* A new test suite named "New Feed Selection" */
